@@ -1,2 +1,6 @@
 # Rough files and folders
 rough
+
+# environment files
+.env
+.environment
