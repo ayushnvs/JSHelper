@@ -3,11 +3,12 @@
  */
 export class jsHelper {
     constructor () {
-        this.IW = window.innerHeight;
+        this.IH = window.innerHeight;
         this.IW = window.innerWidth;
     }
 
     getElementNode(selector) {
+        // Get element node through css or xpath
         if (selector.css) {
             let elNode = document.querySelector(selector.css)
             elNode = elNode ? elNode : null
@@ -20,6 +21,7 @@ export class jsHelper {
     }
 
     scrollIntoView(selector)  {
+        // Scroll into view through css or xpath
         let node = this.getElementNode(selector)
         if (node) {
             node.scrollIntoView()
@@ -28,6 +30,7 @@ export class jsHelper {
     }
 
     addInnerText(selector, text) {
+        // Add inner text to any node using its css or xpath
         let node = this.getElementNode(selector)
         if (node) {
             node.textContent = text
