@@ -10,7 +10,7 @@ export class jsHelper {
     getElementNode(selector) {
         // Get element node through css or xpath
         if (selector.css) {
-            let elNode = document.querySelector(selector.css)
+            var elNode = document.querySelector(selector.css)
             elNode = elNode ? elNode : null
         }
         if (selector.xpath) {
