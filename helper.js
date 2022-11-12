@@ -7,7 +7,7 @@ export class jsHelper {
         this.IW = window.innerWidth;
     }
 
-    getElementNode(selector) {
+    getElementNode(selector={css: 'body', xpath: '//body'}) {
         // Get element node through css or xpath
         if (selector.css) {
             var elNode = document.querySelector(selector.css)
@@ -36,5 +36,13 @@ export class jsHelper {
             node.textContent = text
         }
         else { console.log("Element with given selector is not present!") }
+    }
+
+    addEvent(selector, event, fun) {
+        // Add an event to an html element
+        let node = this.getElementNode(selector)
+        if (node) {
+            node.addEventListener(event, fun)
+        }
     }
 }
